@@ -1,0 +1,22 @@
+spring:
+    application:
+        name: ymq-rabbitmq-spring-boot
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+server:
+    port: 8080
+
+mq:
+    config:
+        exchange: log.direct
+        queue:
+            info: log.info
+                routing:
+                    key: log.info.routing.key
+            error: log.error
+                routing:
+                    key: log.error.routing.key
